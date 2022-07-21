@@ -80,12 +80,15 @@ p{
    margin: 0%;
 }
 ul{
-   color: #a5b392;
+   color: #748160;
    font-size: 24px;
    text-align: left;
    font-family: 'Josefin Sans', Verdana, Arial, sans-serif;
    font-weight: 700;
    margin-top: 50px;
+}
+ul li{
+   margin-bottom: .5em;
 }
 a{
    color: #a5b392;
@@ -112,20 +115,35 @@ img{
    padding-right: 15%;
    display: grid;
    grid-template-columns: auto auto;
+   margin: 0 auto;
+   margin-bottom: 100px;
 }
 
 /* about-grid */
-.grid-three{
-   margin-top: 10%;
+.a-grid-one{
+   grid-column: 1/2;
+   grid-row: 1/2;
 }
-.grid-four{
+.a-grid-two{
+   grid-column: 2/2;
+   grid-row: 1/2;
+}
+.a-grid-three{
+   margin-top: 10%;
+   grid-column: 1/2;
+   grid-row: 2/2;
+}
+.a-grid-four{
    margin-top: 12%;
    align-items: center;
+   grid-column: 2/2;
+   grid-row: 2/2
 }
 
 /* about-images */
 #hospital-img{
    max-width: 500px;
+   width: 100%;
    object-fit: cover;
    display: block;
    overflow: hidden;
@@ -135,9 +153,11 @@ img{
    margin-right: 0;
 }
 #family-img{
+   max-width: 100%;
    border-radius: 20px;
    margin-left: 0;
    margin-right: 0;
+   margin-top: 35px;
 }
 figcaption{
    color: #545454;
@@ -157,45 +177,57 @@ figcaption{
 
 /* Landing  styles */
 #landing-main{
+   width: 70%;
    margin-top: 3%;
-   padding-left: 15%;
-   padding-right: 15%;
+   /* padding-left: 15%;
+   padding-right: 15%; */
+   margin: 0 auto;
    display: grid;
    grid-template-columns: auto auto;
+   margin-bottom: 100px;
+   position:static;
 }
 
 /* landing-text */
-.landing-title{
+#landing-title{
    font-size: 150px;
    color: #767F69;
    text-align: left;
    margin-bottom: 0%;
-   text-align: start;
    margin-top: -30px;
 }
 
 /* landing-layout */
-.left{
+.i-grid-one{
    max-width: 100%;
    /* margin-top: 5%; */
    background-color: transparent;;
    grid-column: 1/2;
+   grid-row: 1/2;
 
 }
-.right{
-   grid-column: 2/3;
+.i-grid-two{
+   grid-column: 2/2;
+   grid-row: 1/2;
    margin-top: -8.5vw;
 }
-/* .right-info{
-   text-align: left;
-} */
+.i-grid-three{
+   grid-column: 1/2;
+   grid-row: 2/2;
+}
+.i-grid-four{
+   grid-column: 2/2;
+   grid-row:2/2;
+   margin-left: 75px;
+   margin-top: 125px;
+}
 #box{
    width: 75vw;
-   height: 15vw;
+   height: 525px;
    background-color: #D6E8BE ;
    align-self: center;
-   padding-top: 0%;
-   margin-top: -29vw;
+   top: 0;
+   /* margin-top: -29vw; */
    z-index: -1;
    position:absolute;
 }
@@ -226,8 +258,15 @@ div.circle-avatar{
    margin-left: 0;
    margin-right: 0;
 }
-
-
+.i-grid-four img{
+   max-width: 500px;
+   width:100%;
+   object-fit: cover;
+   display: block;
+   overflow: hidden;
+   border-radius: 20px;
+   aspect-ratio: 1/1;
+}
 
 
 
@@ -241,9 +280,11 @@ div.circle-avatar{
    margin-top: 0%;
    padding-left: 15%;
    padding-right: 15%;
+   margin: 0 auto;
    display: grid;
    grid-template-columns: auto auto;
    grid-template-rows: auto auto auto auto;
+   margin-bottom: 100px;
 }
 
 /* hobbies-text */
@@ -321,16 +362,201 @@ div.circle-avatar{
 
 
 
+/* making it more responsive */
+@media screen and (max-width:1400px){
+
+   #about-main{
+      margin-top: 3%;
+      padding-left: 15%;
+      padding-right: 15%;
+      margin: 0 auto;
+      display: block;
+   }
+   
+   /* about-grid */
+   .a-grid-one{
+      text-align: center;
+   }
+   .a-grid-three{
+      margin-top: 10%;
+   }
+   .a-grid-four{
+      margin-top: 12%;
+      text-align: center;
+   }
+   
+   /* about-images */
+   #hospital-img{
+      max-width: 500px;
+      object-fit: cover;
+      display: inline;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+      /* margin-left: 0; */
+      /* margin-right: 0; */
+   }
+   #family-img{
+      max-width: 500px;
+      object-fit: cover;
+      display: inline;
+      overflow: hidden;
+      border-radius: 20px;
+      /* margin-left: 0; */
+      /* margin-right: 0; */
+      aspect-ratio: 1/1;
+   }
+   figcaption{
+      color: #545454;
+      font-family: 'Josefin Sans', Verdana, Arial, sans-serif;
+      margin-top: 5px;
+      text-align: right;
+   }
 
 
-#index-main{
-   margin-top: 0%;
-   padding-left: 15%;
-   padding-right: 15%;
-   height: 100%;
-}
-#index-main footer{
-   bottom: 0;
-   position:fixed;
-   overflow: hidden;
+
+
+
+   /* hobbies */
+   #hobbies-main{
+      display: block;
+   }
+   .grid-header{
+      align-self: stretch;
+   }
+   .grid-o{
+      align-self: stretch;
+      text-align: right;
+      margin-top: 10%;
+   }
+   .grid-oo{
+      margin-top: 10%;
+   }
+   .grid-oo-o{
+      margin-top: 10%;
+   }
+   .grid-oo-o p{
+      padding: 25px;
+   }
+   .grid-oo-oo{
+      margin-top: 9%;
+   }
+
+   /* grid-images */
+   .grid-header img{
+      max-width: 100%;
+      height:100%;
+      object-fit: cover;
+      display: block;
+      overflow: hidden;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px
+   }
+   .grid-o img{
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+   }
+   .grid-oo-oo img{
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+      align-self: flex-start;
+   }
+
+
+
+
+
+
+
+
+      /* Landing  styles */
+   #landing-main{
+      margin-top: 3%;
+      padding-left: 15%;
+      padding-right: 15%;
+      width: 70%;
+      margin-bottom: 100px;
+      display: block;
+      margin: 0 auto;
+   }
+
+   /* landing-text */
+   #landing-title{
+      font-size: 150px;
+      color: #767F69;
+      text-align: left;
+      line-height: 125px;
+      margin-top: -200px;
+   }
+
+   /* landing-layout */
+   .i-grid-one{
+      max-height: 600px;
+      /* background-color: blue; */
+      padding:0;
+      margin:0;
+      margin-top: 50px;
+      aspect-ratio: 1/1;
+      margin: 0 auto;
+
+   }
+   .i-grid-two {
+      margin: 0 auto;
+   }
+   .i-grid-four img{
+      max-width: 100%;
+      object-fit: cover;
+      display: inline;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 1/1;
+   }
+   #box{
+      width: 75vw;
+      height: 15vw;
+      background-color: #D6E8BE ;
+      align-self: center;
+      top: 0;
+      margin-top: -29vw;
+      z-index: -1;
+      position:absolute;
+   }
+
+   /* landing-images */
+   .circle-avatar{
+      /* make it responsive */
+      max-width: 100%;
+      /* width:100%; */
+      /* height:auto; */
+      /* max-height: 550px; */
+      display:inline;
+      overflow: hidden;
+      /* div height to be the same as width*/
+      /* padding-top:100%; */
+
+      /* make it a circle */
+      border-radius:50%;
+      border-bottom-right-radius: 5%;
+
+      /* Centering on image`s center*/
+      background-position-y: center;
+      background-position-x: center;
+      background-repeat: no-repeat;
+
+      /* it makes the clue thing, takes smaller dimension to fill div */
+
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0px;
+
+      /* background-origin: content-box; */
+   }
 }
